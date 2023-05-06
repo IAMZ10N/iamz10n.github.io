@@ -46,6 +46,7 @@ body {
   color: #222a43;
   border-radius: 10px;
   background-color: #cccccc;
+  width: 100%;
 }
 #result {
   margin-top: 1.25em;

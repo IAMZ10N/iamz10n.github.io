@@ -47,6 +47,7 @@ body {
   border-radius: 10px;
   background-color: #cccccc;
   width: 100%;
+  min-width: 50%;
 }
 #result {
   margin-top: 1.25em;

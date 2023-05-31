@@ -68,7 +68,14 @@ searchBtn.addEventListener("click", () => {
                   data[0].maps.openStreetMaps
                 }'>Click here to view ${data[0].name.common} on the map</a></h4>
             </div>
-        </div>        
+        </div>  
+        
+        <div class="wrapper">
+            <div class="data-wrapper">
+                <h4><a target='_new' href='https://www.britannica.com/facts/${data[0].name.common}'>
+                Click here to view ${data[0].name.common} Facts & Stats</a></h4>
+            </div>
+        </div>       
       `;
     })
     .catch(() => {

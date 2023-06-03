@@ -87,3 +87,26 @@ body {
 span {
   text-transform: capitalize;
 }
+
+.show {
+  display: block;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#showOnMap {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.primarybtn,
+.homebtn {
+  background-color: blue;
+  color: white;
+  height: 40px;
+  width: 130px;
+}

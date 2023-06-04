@@ -90,35 +90,41 @@ searchBtn.addEventListener("click", () => {
 
 let sbtn = document.querySelector(".primarybtn");
 let shwMap = document.querySelector("#showOnMap");
+
 sbtn.addEventListener("click", function () {
-  let lat = document.querySelector(".lat").textContent;
-  let lng = document.querySelector(".lng").textContent;
-  // Passing the data from API to display map
+  if (sbtn.textContent == "Show on Map") {
+    let lat = document.querySelector(".lat").textContent;
+    let lng = document.querySelector(".lng").textContent;
+    // Passing the data from API to display map
 
-  shwMap.classList.remove("hidden");
-  // Where you want to render the map.
-  var element = document.getElementById("osm-map");
+    shwMap.classList.remove("hidden");
+    // Where you want to render the map.
+    var element = document.getElementById("osm-map");
 
-  // Height has to be set. You can do this in CSS too.
-  element.style = "height:300px;";
+    // Height has to be set. You can do this in CSS too.
+    element.style = "height:300px;";
 
-  // Create Leaflet map on map element.
-  var map = L.map(element);
+    // Create Leaflet map on map element.
+    var map = L.map(element);
 
-  // Add OSM tile layer to the Leaflet map.
-  L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
+    // Add OSM tile layer to the Leaflet map.
+    L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
 
-  // Target's GPS coordinates.
-  var target = L.latLng(`${lat}`, `${lng}`);
+    // Target's GPS coordinates.
+    var target = L.latLng(`${lat}`, `${lng}`);
 
-  // Set map's center to target with zoom 14.
-  map.setView(target, 6);
+    // Set map's center to target with zoom 14.
+    map.setView(target, 6);
 
-  // Place a marker on the same location.
-  L.marker(target).addTo(map);
+    // Place a marker on the same location.
+    L.marker(target).addTo(map);
 
-  sbtn.classList.add("hidden");
+    // sbtn.classList.add("hidden");
+    sbtn.textContent = "Home";
+  } else {
+    location.reload();
+  }
 });
